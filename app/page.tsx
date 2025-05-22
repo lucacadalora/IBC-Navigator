@@ -349,6 +349,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Subscribe to IBC Navigator</h2>
+            <p className="text-gray-700 mb-8">
+              Get unlimited access to all our premium bulletins, including archives, data visualizations, and exclusive
+              research.
+            </p>
+            <Button variant="destructive" className="rounded-none px-8 py-6 text-lg">
+              Subscribe Today
+            </Button>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
