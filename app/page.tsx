@@ -10,9 +10,7 @@ export default function Home() {
       <Header />
 
       <section className="container mx-auto px-4 py-12">
-        <div className="flex justify-between items-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">IBC Bulletin</h1>
-        </div>
+        <div className="flex justify-between items-center mb-16"></div>
 
         <div className="bg-gray-100 p-8 mb-16">
           <div className="grid md:grid-cols-3 gap-8">
