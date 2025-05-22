@@ -1,10 +1,16 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Download, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
+import { SubscriptionModal } from "@/components/subscription-modal"
 
 export default function Home() {
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -236,12 +242,18 @@ export default function Home() {
               Get unlimited access to all our premium bulletins, including archives, data visualizations, and exclusive
               research.
             </p>
-            <Button variant="destructive" className="rounded-none px-6 md:px-8 py-2 md:py-6 text-sm md:text-lg">
+            <Button
+              variant="destructive"
+              className="rounded-none px-6 md:px-8 py-2 md:py-6 text-sm md:text-lg"
+              onClick={() => setIsSubscriptionModalOpen(true)}
+            >
               Subscribe Today
             </Button>
           </div>
         </div>
       </section>
+
+      <SubscriptionModal isOpen={isSubscriptionModalOpen} onClose={() => setIsSubscriptionModalOpen(false)} />
     </main>
   )
 }

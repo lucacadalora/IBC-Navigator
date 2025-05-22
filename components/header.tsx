@@ -4,9 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Search } from "lucide-react"
+import { SubscriptionModal } from "@/components/subscription-modal"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -45,7 +47,11 @@ export default function Header() {
             <button className="text-gray-600 hover:text-gray-900" aria-label="Search">
               <Search size={20} />
             </button>
-            <Button variant="destructive" className="rounded-none text-xs md:text-sm px-2 md:px-4 py-1 md:py-2">
+            <Button
+              variant="destructive"
+              className="rounded-none text-xs md:text-sm px-2 md:px-4 py-1 md:py-2"
+              onClick={() => setIsSubscriptionModalOpen(true)}
+            >
               Subscribe
             </Button>
           </div>
@@ -71,6 +77,7 @@ export default function Header() {
           </div>
         )}
       </div>
+      <SubscriptionModal isOpen={isSubscriptionModalOpen} onClose={() => setIsSubscriptionModalOpen(false)} />
     </header>
   )
 }
