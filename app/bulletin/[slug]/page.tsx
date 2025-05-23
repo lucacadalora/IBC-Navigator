@@ -7,6 +7,7 @@ import Header from "@/components/header"
 import { SubscriptionModal } from "@/components/subscription-modal"
 import { useState } from "react"
 import { PdfDownloadButton } from "@/components/pdf-download-button"
+import { Button } from "@/components/ui/button"
 
 interface BulletinPageProps {
   params: {
@@ -186,7 +187,16 @@ export default function BulletinPage({ params }: BulletinPageProps) {
             Get unlimited access to all our premium bulletins, including archives, data visualizations, and exclusive
             research.
           </p>
-          <PdfDownloadButton volume="vol5" />
+          <div className="flex justify-center gap-4">
+            <Button
+              variant="destructive"
+              className="rounded-none px-8"
+              onClick={() => setIsSubscriptionModalOpen(true)}
+            >
+              Subscribe Today
+            </Button>
+            <PdfDownloadButton volume="vol5" variant="outline" className="rounded-none px-8" />
+          </div>
         </div>
         <SubscriptionModal isOpen={isSubscriptionModalOpen} onClose={() => setIsSubscriptionModalOpen(false)} />
       </article>

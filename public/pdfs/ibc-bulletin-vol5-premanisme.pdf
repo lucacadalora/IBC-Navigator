@@ -1,5 +1,13 @@
-... shell ...
+This is a sample PDF file for the IBC Bulletin Vol.5 on Premanisme in Indonesia.
 
-Now, let's create a utility function to handle PDF downloads and update the components to use it:
+The actual PDF would contain:
+1. Executive Summary
+2. Introduction to Premanisme in Indonesia
+3. Economic Impact Analysis
+4. Regional Variations
+5. Case Studies
+6. Policy Recommendations
+7. Conclusion
+8. References
 
-First, let's create a utility function for handling PDF downloads:
+This file is used for demonstration purposes in the PDF download functionality.
