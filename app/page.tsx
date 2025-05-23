@@ -73,7 +73,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-3 md:space-x-4">
-                <Link href="/bulletin/premanisme-the-sub-national-achilles-heel">
+                <Link href="https://navigator.ibc-institute.id/pdfs/IBC%20Navigator%20-%20Vol.5.2025%20-%20Premanisme.pdf">
                   <Button
                     variant="default"
                     className="rounded-none bg-gray-900 hover:bg-gray-800 text-xs md:text-sm py-1 h-auto"
@@ -118,7 +118,7 @@ export default function Home() {
                 "Public charging infrastructure lags adoption: With only ~1,500 public charging stations nationwide by 2024, Indonesia targets over 63,000 by 2030. PLN and VinFast each plan tens of thousands more to support national electrification.",
                 "Indonesia's nickel-driven EV battery advantage is at risk, as global automakers increasingly shift to LFP (lithium iron phosphate) batteries, which don't require nickel, due to cost, safety, and supply stability.",
               ],
-              link: "/bulletin/indonesia-ev-ecosystem",
+              link: "https://ibc-bulletin-vol4.vercel.app/",
             },
             {
               image: "/ibc-bulletin-vol3a-cover.png",
@@ -133,7 +133,7 @@ export default function Home() {
                 "Advanced CGE simulations project that the textile and footwear sector could lose between 250,000 and 400,000 jobs, while a broader comparative scenario analysis—including indirect and multiplier effects—suggests total losses could range from 480,000 to 650,000 jobs",
                 "Regional impacts are highly concentrated in West Java, Central Java, and Banten provinces",
               ],
-              link: "/bulletin/us-tariff-impacts",
+              link: "https://ibc-bulletin-vol3a.replit.app/",
             },
             {
               image: "/ibc-bulletin-vol2-cover.png",
@@ -148,7 +148,7 @@ export default function Home() {
                 "AI to add $366B to Indonesia's economy by 2030, part of $1T regional growth and $15.7T global growth.",
                 "Strategic AI implementation shows 30-45% productivity gains in enabled sectors.",
               ],
-              link: "/bulletin/ai-disruption",
+              link: "https://navigator.ibc-institute.id/publication/vol2",
             },
             {
               image: "/ibc-bulletin-vol1-cover.png",
@@ -163,7 +163,7 @@ export default function Home() {
                 "$27.9 billion of Indonesian exports to the US, led by electronics (8.5%), palm oil (6.1%) and seafood (5.6%), are suddenly at heightened risk.",
                 "Rupiah tumbles to 16,578 while the Jakarta Composite Index is down 11% YTD, signalling mounting market stress from the tariff shock.",
               ],
-              link: "/bulletin/tariff-increases",
+              link: "https://navigator.ibc-institute.id/publication/vol1",
             },
           ].map((bulletin, index) => (
             <div
