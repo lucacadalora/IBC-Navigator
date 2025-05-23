@@ -1,8 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Share2, Bookmark, Printer } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
+import { SubscriptionModal } from "@/components/subscription-modal"
+import { useState } from "react"
 
 interface ArticlePageProps {
   params: {
@@ -34,6 +38,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     ],
   }
 
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -50,7 +56,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
           <div className="flex items-center mb-8">
             <Image
-              src="/placeholder.svg?height=60&width=60&query=professional headshot"
+              src="/professional-headshot.png"
               alt={articleData.author}
               width={60}
               height={60}
@@ -86,7 +92,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <p className="text-xl font-medium mb-6">{articleData.summary}</p>
 
           <Image
-            src="/placeholder.svg?height=500&width=900&query=business strategy meeting with diverse professionals"
+            src="/diverse-business-meeting.png"
             alt="Article feature image"
             width={900}
             height={500}
@@ -158,11 +164,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <p className="mb-6 max-w-lg mx-auto">
             Get unlimited access to all our premium content, including archives, webinars, and exclusive research.
           </p>
-          <Button variant="destructive" className="rounded-none px-8">
+          <Button variant="destructive" className="rounded-none px-8" onClick={() => setIsSubscriptionModalOpen(true)}>
             Subscribe Today
           </Button>
         </div>
       </article>
+      <SubscriptionModal isOpen={isSubscriptionModalOpen} onClose={() => setIsSubscriptionModalOpen(false)} />
     </main>
   )
 }

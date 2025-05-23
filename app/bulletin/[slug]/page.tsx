@@ -1,8 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Share2, Bookmark, Printer, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft, Share2, Bookmark, Printer } from "lucide-react"
 import Header from "@/components/header"
+import { SubscriptionModal } from "@/components/subscription-modal"
+import { useState } from "react"
+import { PdfDownloadButton } from "@/components/pdf-download-button"
 
 interface BulletinPageProps {
   params: {
@@ -37,6 +41,8 @@ export default function BulletinPage({ params }: BulletinPageProps) {
       "Create special economic zones with enhanced security protocols and governance",
     ],
   }
+
+  const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
 
   return (
     <main className="min-h-screen bg-white">
@@ -85,9 +91,13 @@ export default function BulletinPage({ params }: BulletinPageProps) {
               <button aria-label="Print" className="text-gray-600 hover:text-gray-900">
                 <Printer className="h-5 w-5" />
               </button>
-              <button aria-label="Download" className="text-gray-600 hover:text-gray-900">
-                <Download className="h-5 w-5" />
-              </button>
+              <PdfDownloadButton
+                volume="vol5"
+                variant="ghost"
+                className="text-gray-600 hover:text-gray-900"
+                iconSize={5}
+                showText={false}
+              />
             </div>
           </div>
         </div>
@@ -176,10 +186,9 @@ export default function BulletinPage({ params }: BulletinPageProps) {
             Get unlimited access to all our premium bulletins, including archives, data visualizations, and exclusive
             research.
           </p>
-          <Button variant="destructive" className="rounded-none px-8">
-            Subscribe Today
-          </Button>
+          <PdfDownloadButton volume="vol5" />
         </div>
+        <SubscriptionModal isOpen={isSubscriptionModalOpen} onClose={() => setIsSubscriptionModalOpen(false)} />
       </article>
     </main>
   )

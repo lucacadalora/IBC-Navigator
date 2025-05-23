@@ -7,6 +7,7 @@ import { Download, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
 import { SubscriptionModal } from "@/components/subscription-modal"
+import { PdfDownloadButton } from "@/components/pdf-download-button"
 
 export default function Home() {
   const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
@@ -220,13 +221,7 @@ export default function Home() {
                       Read Now
                     </Button>
                   </Link>
-                  <Button
-                    variant="ghost"
-                    className="rounded-none text-gray-700 hover:text-gray-900 text-xs md:text-sm py-1 h-auto"
-                  >
-                    <Download className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
-                    Download PDF
-                  </Button>
+                  <PdfDownloadButton volume={bulletin.volume.toLowerCase().replace(".", "").replace("/", "")} />
                 </div>
               </div>
             </div>

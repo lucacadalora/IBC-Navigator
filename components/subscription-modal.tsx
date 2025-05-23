@@ -27,7 +27,9 @@ export function SubscriptionModal({ isOpen, onClose }: SubscriptionModalProps) {
     setMessage(null)
 
     try {
+      console.log("Submitting form data:", formData)
       const result = await subscribeUser(formData)
+      console.log("Subscription result:", result)
 
       if (result.success) {
         setMessage({ type: "success", text: "Thank you for subscribing! You'll receive our latest bulletins." })
@@ -40,7 +42,14 @@ export function SubscriptionModal({ isOpen, onClose }: SubscriptionModalProps) {
         setMessage({ type: "error", text: result.error || "Something went wrong. Please try again." })
       }
     } catch (error) {
-      setMessage({ type: "error", text: "Network error. Please check your connection and try again." })
+      console.error("Subscription error:", error)
+      setMessage({
+        type: "error",
+        text:
+          error instanceof Error
+            ? `Error: ${error.message}`
+            : "Network error. Please check your connection and try again.",
+      })
     } finally {
       setIsSubmitting(false)
     }
