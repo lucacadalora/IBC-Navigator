@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Search } from "lucide-react"
+import { Search, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/header"
 import { SubscriptionModal } from "@/components/subscription-modal"
@@ -11,6 +11,25 @@ import { PdfDownloadButton } from "@/components/pdf-download-button"
 
 export default function Home() {
   const [isSubscriptionModalOpen, setIsSubscriptionModalOpen] = useState(false)
+
+  const vol5Data = {
+    image: "/ibc-bulletin-vol5-cover.png",
+    alt: "IBC Bulletin Vol.5 Cover - Premanisme in Indonesia",
+    volume: "Vol.5",
+    date: "May 2025",
+    title: "Premanisme: The Sub-National Achilles' Heel of Indonesia's Industrial Ambition",
+    description:
+      'Premanisme acts as a "shadow tax" on Indonesia\'s economy, inflating costs across manufacturing, logistics, and retail by 5–30%. Local extortion is now a national investment risk disrupting billion-dollar projects.',
+    highlights: [
+      "Local extortion is now a national investment risk — disrupting billion-dollar projects like the BYD EV plant in West Java.",
+      "Rp 16 billion/month was lost to extortion at Tanjung Priok Port alone; similar losses are replicated across key sectors and regions.",
+      "Indonesia's high ICOR ({" >
+        "}6) reflects how inefficient capital becomes under extortion pressure — more money spent for less growth.",
+      'Investors compare locations — Indonesia\'s "shadow costs" make it less attractive than Vietnam, Malaysia, or Thailand.',
+    ],
+    link: "/bulletin/premanisme-the-sub-national-achilles-heel",
+    pdfLink: "https://navigator.ibc-institute.id/pdfs/IBC%20Navigator%20-%20Vol.5.2025%20-%20Premanisme.pdf",
+  }
 
   return (
     <main className="min-h-screen bg-white">
@@ -21,8 +40,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <div className="md:col-span-1">
               <Image
-                src="/ibc-bulletin-vol5-cover.png"
-                alt="IBC Bulletin Vol.5 Cover - Premanisme in Indonesia"
+                src="/ibc-bulletin-vol6-cover.png"
+                alt="IBC Bulletin Vol.6 Cover - Indonesia's Waste Crisis"
                 width={400}
                 height={500}
                 className="w-full h-auto border border-gray-300 mx-auto md:mx-0 max-w-[250px] md:max-w-full"
@@ -31,49 +50,68 @@ export default function Home() {
             <div className="md:col-span-2">
               <div className="mb-3 md:mb-4">
                 <h2 className="text-xl md:text-2xl font-bold mt-2 mb-1">
-                  <Link href="/bulletin/premanisme-the-sub-national-achilles-heel" className="hover:text-gray-700">
+                  <Link href="/bulletin/forgotten-from-the-sidewalk-to-the-sea" className="hover:text-gray-700">
                     <span className="inline-block bg-gray-800 text-white px-2 py-0.5 text-xs md:text-sm font-medium mr-2">
-                      Vol.5
+                      Vol.6
                     </span>
-                    May 2025
+                    June 2025
                     <br />
-                    Premanisme: The Sub-National Achilles' Heel of Indonesia's Industrial Ambition
+                    Forgotten from the Sidewalk to the Sea: The Market Failure Behind Indonesia's Waste Crisis
                   </Link>
                 </h2>
               </div>
 
               <div className="mb-4 md:mb-6">
                 <p className="text-sm md:text-base text-gray-700">
-                  Premanisme acts as a "shadow tax" on Indonesia's economy, inflating costs across manufacturing,
-                  logistics, and retail by 5–30%. Local extortion is now a national investment risk disrupting
-                  billion-dollar projects.
+                  Urban infrastructure is under pressure. In Jakarta, Bandung, and other cities, uncollected waste clogs
+                  drainage, disrupts mobility, and compounds flood-related losses reaching into trillions of rupiah
+                  annually.
                 </p>
 
                 <div className="mt-3 md:mt-4">
                   <h3 className="font-semibold text-gray-800 mb-1 md:mb-2 text-sm md:text-base">Highlights</h3>
                   <ul className="space-y-1 text-xs md:text-sm">
                     <li>
-                      • Local extortion is now a national investment risk — disrupting billion-dollar projects like the
-                      BYD EV plant in West Java.
+                      • Urban infrastructure is under pressure. In Jakarta, Bandung, and other cities, uncollected waste
+                      clogs drainage, disrupts mobility, and compounds flood-related losses reaching into trillions of
+                      rupiah annually.
                     </li>
                     <li>
-                      • Rp 16 billion/month was lost to extortion at Tanjung Priok Port alone; similar losses are
-                      replicated across key sectors and regions.
+                      • Indonesia's waste challenge is not about volume but it's about system design. Despite low per
+                      capita waste generation, institutional failure has led to one of the world's highest rates of
+                      mismanaged waste.
                     </li>
                     <li>
-                      • Indonesia's high ICOR ({">"}6) reflects how inefficient capital becomes under extortion pressure
-                      — more money spent for less growth.
+                      • Current models treat waste as a sunk cost which creates missing opportunities. Local governments
+                      allocate minimal budgets and lack the tools to manage waste as a strategic service sector.
                     </li>
                     <li>
-                      • Investors compare locations — Indonesia's "shadow costs" make it less attractive than Vietnam,
-                      Malaysia, or Thailand.
+                      • Regulatory enforcement remains weak. While frameworks exist, monitoring, coordination, and
+                      institutional accountability are fragmented across levels of government.
+                    </li>
+                    <li>
+                      • The nation is missing an important industry in its ecosystem, creating an untapped economic
+                      value. With better systems and market structure, Indonesia's waste sector could generate USD 3–4
+                      billion annually in recoverable materials, boost revenues, and create formal jobs.
+                    </li>
+                    <li>
+                      • The informal sector is over-relied upon, yet under-supported. Integration and
+                      professionalization are critical to improving both outcomes and livelihoods.
+                    </li>
+                    <li>
+                      • The policy mindset must shift. Effective waste governance starts with downstream investment,
+                      ensuring off-take, treatment, and recovery capacity, before expecting behavior change upstream.
+                    </li>
+                    <li>
+                      • Treating waste management as infrastructure rather than a peripheral service is the only viable
+                      path to sustainability, resilience, and long-term cost efficiency.
                     </li>
                   </ul>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3 md:space-x-4">
-                <Link href="https://navigator.ibc-institute.id/pdfs/IBC%20Navigator%20-%20Vol.5.2025%20-%20Premanisme.pdf">
+                <Link href="https://drive.google.com/file/d/1KduRCy62970V2CoxF-ZOyRW_jMSUghqA/view?usp=drive_link">
                   <Button
                     variant="default"
                     className="rounded-none bg-gray-900 hover:bg-gray-800 text-xs md:text-sm py-1 h-auto"
@@ -81,7 +119,15 @@ export default function Home() {
                     Read Now
                   </Button>
                 </Link>
-                <PdfDownloadButton volume="vol5" />
+                <Link href="https://drive.google.com/uc?export=download&id=1KduRCy62970V2CoxF-ZOyRW_jMSUghqA">
+                  <Button
+                    variant="ghost"
+                    className="rounded-none text-gray-700 hover:text-gray-900 text-xs md:text-sm py-1 h-auto"
+                  >
+                    <Download className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                    Download PDF
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -104,6 +150,16 @@ export default function Home() {
 
           {/* Archive items - making them more responsive */}
           {[
+            {
+              image: vol5Data.image,
+              alt: vol5Data.alt,
+              volume: vol5Data.volume,
+              date: vol5Data.date,
+              title: vol5Data.title,
+              description: vol5Data.description,
+              highlights: vol5Data.highlights,
+              link: vol5Data.link,
+            },
             {
               image: "/ibc-bulletin-vol4-cover.png",
               alt: "IBC Bulletin Vol.4 Cover - Indonesia's EV Ecosystem",
